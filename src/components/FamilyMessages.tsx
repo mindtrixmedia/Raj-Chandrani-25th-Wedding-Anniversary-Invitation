@@ -55,7 +55,7 @@ export const FamilyMessages: React.FC = () => {
 
             {/* Message Body */}
             <p className="font-serif-luxury italic text-sm text-[#140A04] font-semibold leading-relaxed my-3">
-              &ldquo;Growing up surrounded by Ma and Baba’s gentle love, laughter, and unbreakable partnership has been the greatest blessing of my life. As we celebrate 25 golden years of their marriage, your gracious presence on this silver jubilee evening will make our celebration truly complete. We eagerly look forward to welcoming you!&rdquo;
+              &ldquo;Growing up surrounded by Mummy and Daddy&apos;s gentle love, laughter, and unbreakable partnership has been the greatest blessing of my life. As we celebrate 25 golden years of their marriage, your gracious presence on this silver jubilee evening will make our celebration truly complete. We eagerly look forward to welcoming you!&rdquo;
             </p>
 
             {/* Author Attribution */}

@@ -20,9 +20,9 @@ const EventDetails = lazy(() =>
 const Venue = lazy(() =>
   import('./components/Venue').then((m) => ({ default: m.Venue }))
 );
-const RSVPForm = lazy(() =>
-  import('./components/RSVPForm').then((m) => ({ default: m.RSVPForm }))
-);
+// const RSVPForm = lazy(() =>
+//   import('./components/RSVPForm').then((m) => ({ default: m.RSVPForm }))
+// );
 const ShareInvitation = lazy(() =>
   import('./components/ShareInvitation').then((m) => ({ default: m.ShareInvitation }))
 );
@@ -153,8 +153,8 @@ export default function App() {
               {/* Section 7: Venue & Location */}
               <Venue />
 
-              {/* Section 8: RSVP Form */}
-              <RSVPForm />
+              {/* Section 8: RSVP Form (Commented out per request) */}
+              {/* <RSVPForm /> */}
 
               {/* Section 9: Share Invitation */}
               <ShareInvitation />

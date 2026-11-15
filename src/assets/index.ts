@@ -1,5 +1,5 @@
 // ponytail: centralized assets export for active production assets only
-import heroImg from './hero.jpg';
+import heroImg from './hero.jpeg';
 import footerImg from './footer.jpg';
 import venueImg from './venue.jpg';
 import backgroundImg from './background.png';
@@ -21,7 +21,7 @@ import storyImg6 from './img/Sindoor Ceremony in Bengali Wedding Attire.jpg';
 import storyImg7 from './img/Smiling Ceremonial Portrait in Gold.jpg';
 import storyImg8 from './img/Bengali Bridal Portrait on a Golden Throne.jpg';
 import storyImg9 from './img/Regal Blue Bridal Portrait.jpg';
-import storyImg10 from './img/Royal Blue Bridal Portrait.jpg';
+import storyImg10 from './img/Traditional South Asian Wedding Portrait.jpeg';
 
 export interface StoryPhoto {
   id: number;
@@ -39,7 +39,7 @@ export const storyPhotos: StoryPhoto[] = [
   { id: 7, img: storyImg7, alt: 'Smiling Ceremonial Portrait in Gold' },
   { id: 8, img: storyImg8, alt: 'Bengali Bridal Portrait on a Golden Throne' },
   { id: 9, img: storyImg9, alt: 'Regal Blue Bridal Portrait' },
-  { id: 10, img: storyImg10, alt: 'Royal Blue Bridal Portrait' },
+  { id: 10, img: storyImg10, alt: 'Traditional South Asian Wedding Portrait' },
 ];
 
 // Backwards-compatible aliases

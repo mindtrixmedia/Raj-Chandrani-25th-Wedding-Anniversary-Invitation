@@ -1,7 +1,7 @@
 // ponytail: mobile-first venue section with identical mobile font size on all devices
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Info, Clock, Globe, Calendar } from 'lucide-react';
+import { MapPin, Info, Clock, Globe, Calendar, Phone } from 'lucide-react';
 import { createGoogleCalendarUrl } from '../utils/rsvp';
 import { venueImg } from '../assets';
 
@@ -127,6 +127,36 @@ export const Venue: React.FC = () => {
             </div>
           </div>
 
+        </motion.div>
+
+        {/* Invitation from our son RITHVIK & Contact */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-20px' }}
+          transition={{ duration: 0.6, delay: 0.25, ease: 'easeOut' }}
+          className="mt-6 flex flex-col items-center text-center"
+        >
+          <p className="font-cinzel text-xs tracking-[0.24em] text-[#3B1F04] uppercase font-extrabold drop-shadow-[0_1px_1px_rgba(255,255,255,0.9)]">
+            Invitation from our son RITHVIK
+          </p>
+
+          <div className="mt-2.5 flex items-center justify-center flex-wrap gap-2 text-xs font-sans-clean text-[#120803] font-bold">
+            <Phone className="w-3.5 h-3.5 text-[#542F07] shrink-0" />
+            <a
+              href="tel:9433007412"
+              className="hover:text-[#542F07] transition-colors font-extrabold underline decoration-[#542F07]/40 underline-offset-2"
+            >
+              9433007412 (Raj)
+            </a>
+            <span>·</span>
+            <a
+              href="tel:9432854364"
+              className="hover:text-[#542F07] transition-colors font-extrabold underline decoration-[#542F07]/40 underline-offset-2"
+            >
+              9432854364 (Chandrani)
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
