@@ -72,7 +72,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ shouldPlay }) => {
 
   return (
     <>
-      <audio ref={audioRef} src={backgroundMusic} preload="auto" loop />
+      <audio ref={audioRef} src={backgroundMusic} preload={shouldPlay ? 'auto' : 'none'} loop />
 
       {shouldPlay && (
         <motion.aside

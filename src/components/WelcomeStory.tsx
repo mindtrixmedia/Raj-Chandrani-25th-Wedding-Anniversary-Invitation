@@ -111,6 +111,8 @@ export const WelcomeStory: React.FC = () => {
               opacity = 0;
             }
 
+            const isNearby = isCenter || isLeft || isRight || Math.abs(diff) <= 2 || Math.abs(diff) >= total - 2;
+
             return (
               <motion.div
                 key={photo.id}
@@ -137,13 +139,15 @@ export const WelcomeStory: React.FC = () => {
                     : 'border-2 border-[#D5C0A5]/90 shadow-[0_3px_10px_rgba(84,47,7,0.18)] hover:opacity-100'
                 }`}
               >
-                <img
-                  src={photo.img}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover object-center pointer-events-none"
-                  loading="lazy"
-                  decoding="async"
-                />
+                {isNearby && (
+                  <img
+                    src={photo.img}
+                    alt={photo.alt}
+                    className="w-full h-full object-cover object-center pointer-events-none"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )}
               </motion.div>
             );
           })}

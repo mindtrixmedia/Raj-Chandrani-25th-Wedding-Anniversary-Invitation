@@ -22,8 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, animateIn = true }) 
           alt="Raj & Chandrani"
           className="w-full h-full object-cover object-[center_32%]"
           loading="eager"
-          fetchPriority="high"
-          decoding="sync"
+          decoding="async"
         />
 
         {/* Bottom subtle shadow: Ensures location & scroll button are crisp */}
@@ -64,6 +63,8 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, animateIn = true }) 
             src={tphLogoImg}
             alt="The Photographer House"
             className="h-5 sm:h-5.5 w-auto object-contain rounded-xs opacity-95 group-hover:opacity-100 transition-opacity shadow-2xs"
+            loading="lazy"
+            decoding="async"
           />
           <span className="font-cinzel text-[11px] sm:text-xs tracking-[0.16em] text-[#381B03] group-hover:text-[#180801] uppercase font-bold flex items-center gap-1.5 transition-colors">
             <span className="opacity-40 font-light">|</span>
