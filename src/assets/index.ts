@@ -4,6 +4,7 @@ import footerImg from './footer.jpg';
 import venueImg from './venue.jpg';
 import backgroundImg from './background.png';
 import introVideo from './intro.mp4';
+import ganeshIntroVideo from './ganesh-intro.mp4';
 import introPoster from './intro-poster.png';
 import faviconImg from './favicon.png';
 import tphLogoImg from './tph-logo.png';
@@ -56,6 +57,7 @@ export {
   venueImg,
   backgroundImg,
   introVideo,
+  ganeshIntroVideo,
   introPoster,
   faviconImg,
   tphLogoImg,
