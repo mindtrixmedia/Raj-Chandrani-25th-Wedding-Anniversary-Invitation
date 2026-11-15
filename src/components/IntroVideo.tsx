@@ -83,14 +83,14 @@ export const IntroVideo: React.FC<IntroVideoProps> = ({ onComplete }) => {
       aria-label="Play Intro Video"
     >
       <div className="w-full max-w-[450px] h-full relative bg-[#F4DCB3] shadow-2xl overflow-hidden sm:border-x border-[#D5C0A5]/70 flex items-center justify-center">
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           {step === 'ganesh' ? (
             <motion.div
               key="ganesh"
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.28, ease: 'easeOut' }}
-              className="w-full h-full relative flex items-center justify-center bg-black"
+              transition={{ duration: 0.75, ease: 'easeInOut' }}
+              className="absolute inset-0 w-full h-full flex items-center justify-center bg-black z-10"
             >
               <video
                 ref={ganeshRef}
@@ -136,8 +136,8 @@ export const IntroVideo: React.FC<IntroVideoProps> = ({ onComplete }) => {
               key="intro"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.32, ease: 'easeOut' }}
-              className="w-full h-full relative"
+              transition={{ duration: 0.75, ease: 'easeInOut' }}
+              className="absolute inset-0 w-full h-full z-20"
             >
               <video
                 ref={introRef}
