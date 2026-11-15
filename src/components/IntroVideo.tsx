@@ -11,7 +11,7 @@ interface IntroVideoProps {
 export const IntroVideo: React.FC<IntroVideoProps> = ({ onComplete }) => {
   const [step, setStep] = useState<'ganesh' | 'intro'>('ganesh');
   const [isMuted, setIsMuted] = useState(true);
-  const [isPlayingCelebration, setIsPlayingCelebration] = useState(false);
+  const [hasRenderedFrame, setHasRenderedFrame] = useState(false);
   const [hasStartedCelebration, setHasStartedCelebration] = useState(false);
 
   const ganeshRef = useRef<HTMLVideoElement | null>(null);
@@ -144,23 +144,31 @@ export const IntroVideo: React.FC<IntroVideoProps> = ({ onComplete }) => {
                 src={introVideo}
                 poster={introPoster}
                 playsInline
-                preload="metadata"
+                preload="auto"
                 muted={!hasStartedCelebration}
-                onPlaying={() => setIsPlayingCelebration(true)}
+                onTimeUpdate={(e) => {
+                  if (e.currentTarget.currentTime > 0.05) {
+                    setHasRenderedFrame(true);
+                  }
+                }}
                 onEnded={onComplete}
                 className="w-full h-full object-cover pointer-events-none"
               />
 
-              {/* Video Cover Image shown until video frames render */}
-              {!isPlayingCelebration && (
-                <img
-                  src={introPoster}
-                  alt="Video Cover"
-                  className="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none"
-                  loading="lazy"
-                  decoding="async"
-                />
-              )}
+              {/* Video Cover Image stays visible until video actively renders moving frames to prevent black flicker */}
+              <AnimatePresence>
+                {!hasRenderedFrame && (
+                  <motion.img
+                    src={introPoster}
+                    alt="Video Cover"
+                    initial={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2, ease: 'easeOut' }}
+                    className="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none"
+                    loading="eager"
+                  />
+                )}
+              </AnimatePresence>
 
               {/* 'Click to Open' indicator at 68% height */}
               {!hasStartedCelebration && (
